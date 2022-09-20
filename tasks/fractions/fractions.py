@@ -1,19 +1,14 @@
-"""
-Задача: написать функцию для сложения двух дробей, заданных числителями и знаменателями.
+def add_fractions(a,b,c,d):
+    if b==d:
+        chislit=a+c
+        znamenat=b
+    else:
+        chislit = a*d + c*b
+        znamenat = b*d
+    k=0
+    for i in range(1, chislit+1):
+        if znamenat % i==0 and chislit % i==0:
+            k=max(i,k)
+    return int(chislit / k), int(znamenat / k)
 
-Результат работы функции (x, y) должен удовлетворять свойствам:
-1. a/b + c/d = x/y
-2. x/y несократима
-3. y >= 0
-
-Можно считать, что передаваемые в функцию b и d всегда ненулевые.
-"""
-
-
-def add_fractions(a, b, c, d):
-    """
-    Функция сложения дробей a/b и c/d
-    Должна возвращать числитель и знаменатель дроби-результата
-    """
-    return Ellipsis # Напишите тело функции и правильный return
-
+print(add_fractions(int(input()),int(input()),int(input()),int(input())))
